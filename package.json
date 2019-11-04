@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "build": "rm -rf build && mkdir build && cp index.html build/index.html"
   }
 }
