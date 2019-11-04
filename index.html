@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="max-width=device-width; initial-scale=1">
+        <title>Bryce Hanscomb</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway:500,900&display=swap');
+
+            :root {
+                --primary-color: #03A9F4;
+                --secondary-color: #F2F2F2;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin-top: 0;
+                /*transition: all 0.3s ease;*/
+            }
+
+            body {
+                margin: 0;
+                border: 20px solid var(--secondary-color);
+                min-height: 100vh;
+                font-size: 20px;
+                font-family: 'Raleway', sans-serif;
+                /*padding: 0 80px;*/
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                padding: 20px;
+            }
+
+            @media only screen and (min-width: 480px) {
+                body {
+                    font-size: 23px;
+                    border-width: 40px;
+                    padding: 40px;
+                    padding-top: 80px;
+                }
+            }
+
+            @media only screen and (min-width: 800px) {
+                body {
+                    padding: 60px;
+                }
+            }
+
+            h1 {
+                text-transform: uppercase;
+                line-height: 0.8em;
+                margin: 0 0 20px;
+
+                /**
+                 * @see https://stackoverflow.com/a/23889196
+                 */
+                word-spacing: 100vw;
+
+                font-size: 50px;
+            }
+
+            @media only screen and (min-width: 640px) {
+                h1 {
+                    font-size: 60px;
+                }
+            }
+
+            @media only screen and (min-width: 800px) {
+                h1 {
+                    font-size: 80px;
+                    margin-bottom: 40px;
+                }
+            }
+
+            h1::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 10px;
+                background: var(--primary-color);
+
+                margin-top: 20px;
+            }
+
+            @media only screen and (min-width: 800px) {
+                h1::after {
+                    margin-top: 40px;
+                }
+            }
+
+            header,
+            main {
+                margin: 0 auto;
+                max-width: 1000px;
+            }
+
+            header {
+                margin-bottom: 160px;
+            }
+            
+            @media only screen and (min-height: 900px) and (min-width: 640px) {
+                header {
+                    padding-top: 160px;
+                }
+            }
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 900;
+                font-size: 30px;
+                display: inline-flex;
+                flex-direction: column;
+            }
+
+            h2::after {
+                margin-top: 10px;
+                line-height: 0;
+                content: '';
+                display: inline-block;
+                height: 5px;
+                background: var(--primary-color);
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            main {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            #tagline {
+                margin: 0;
+            }
+
+            #about {
+                text-align: right;
+            }
+
+            section {
+                max-width: 380px;
+            }
+
+            a:not(.with-arrow) {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: var(--primary-color);
+                text-decoration: underline;
+            }
+
+            .with-arrow {
+                color: var(--primary-color);
+                text-decoration: none;
+                text-transform: lowercase;
+                font-variant: small-caps;
+            }
+
+            .with-arrow:hover {
+                text-decoration: none;
+            }
+
+            .with-arrow::after {
+                content: '→';
+                /**
+                 * Use a nicer arrow from a different typeface
+                 */
+                font-family: cursive;
+                position: relative;
+                top: 2px;
+                left: 2px;
+                transition: left 0.1s ease-out;
+            }
+
+            .with-arrow:hover::after {
+                left: 7px;
+            }
+
+            #article-teasers li {
+                margin-bottom: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Bryce Hanscomb</h1>
+            <p id="tagline">Front-End Web Developer in Melbourne, Australia</p>
+        </header>
+
+        <main>
+            <section id="articles">
+                <h2>Latest Articles</h2>
+                <ul id="article-teasers">
+                    <li>
+                        <a href="#">
+                            The Changing Role of Consultants in an Agile Workforce
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Use Flux Standard Actions for HTTP PATCH
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Why SitePoint Lost Against Incremental Evil
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    <a class="with-arrow" href="#">More articles</a>
+                </p>
+            </section>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I build smart, scalable applications for the Australian Media, Finance and Technology sectors.
+                </p>
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="with-arrow" href="#">My work</a>
+                        </li>
+                        <li>
+                            <a class="with-arrow" href="#">Open Source</a>
+                        </li>
+                        <li>
+                            <a class="with-arrow" href="#">Contact Me</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+    </body>
+</html>
