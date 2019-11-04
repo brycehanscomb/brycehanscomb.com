@@ -71,11 +71,6 @@
                 }
             }
 
-            /*h1::after {*/
-                /*content: '.';*/
-                /*color: var(--primary-color);*/
-            /*}*/
-
             h1::after {
                 content: '';
                 display: block;
@@ -177,6 +172,12 @@
                 font-family: cursive;
                 position: relative;
                 top: 2px;
+                left: 2px;
+                transition: left 0.1s ease-out;
+            }
+
+            .with-arrow:hover::after {
+                left: 7px;
             }
 
             #article-teasers li {
@@ -212,9 +213,7 @@
                     </li>
                 </ul>
                 <p>
-                    <a class="with-arrow" href="#">
-                        More articles
-                    </a>
+                    <a class="with-arrow" href="#">More articles</a>
                 </p>
             </section>
 
