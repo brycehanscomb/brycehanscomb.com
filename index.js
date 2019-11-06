@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * Only animate if:
+ *
+ * 0. Javascript is enabled
+ * 1. Animations API is supported
+ * 2. Page currently has focus
+ * 3. Viewport is Desktop-size (mobile needs different animations <-- TODO)
+ */
+
 const $ = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 
@@ -64,7 +73,17 @@ const createAnimation = (element, animationKeyframes) => {
 
 createTitleunderline();
 
-if ('animate' in body) {
+
+const begin = () => {
+    // step 3: check if viewport is Desktop sized
+    if (window.innerWidth < 1000) {
+        body.dataset.introState = 'aborted';
+        return;
+    } else {
+        body.dataset.introState = 'playing';
+
+    }
+
     const underlineEntry = createAnimation($('.underline'), expandEntry);
     const titleEntry = createAnimation(title, upEntry);
     const taglineEntry = createAnimation($('#tagline'), downEntry);
@@ -72,7 +91,6 @@ if ('animate' in body) {
     const leftSectionEntry = createAnimation(leftMainSection, leftEntry);
     const rightSectionEntry = createAnimation(rightMainSection, rightEntry);
 
-    body.dataset.introState = 'ready';
 
     setTimeout(() => underlineEntry.play(), 1000);
 
@@ -85,6 +103,19 @@ if ('animate' in body) {
         leftSectionEntry.play();
         rightSectionEntry.play();
     }, 2300);
+};
+
+// Step 0: Javascript is enabled because this script is running
+// Step 1. check if animations API is supported
+if ('animate' in body) {
+    // step 2: check if the page is visible. If not, wait till it is.
+    if ('visibilityState' in document) {
+        if (document.visibilityState === 'visible') {
+            begin();
+        } else {
+            document.addEventListener('visibilitychange', begin);
+        }
+    }
 } else {
-    body.dataset.introState = 'ready';
+    body.dataset.introState = 'unsupported';
 }

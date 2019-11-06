@@ -39,13 +39,19 @@
     }
 }
 
-.underline {
+.underline,
+.no-js .title::after {
     display: block;
     height: 10px;
     background: var(--primary-color);
 
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.no-js .title::after {
+    content: '';
+    width: 100%;
 }
 
 header,
@@ -65,7 +71,8 @@ header {
 }
 
 @media only screen and (min-width: 800px) {
-    .underline {
+    .underline,
+    .no-js .title::after {
         margin-top: 40px;
         margin-bottom: 40px;
     }
@@ -158,6 +165,6 @@ a:hover {
     margin-bottom: 20px;
 }
 
-[data-intro-state="unstarted"] {
+:not('.no-js') [data-intro-state="unstarted"] {
     visibility: hidden;
 }
