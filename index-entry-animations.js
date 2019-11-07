@@ -1,4 +1,4 @@
-'use strict';
+import { $, body, title } from './common.js';
 
 /**
  * Only animate if:
@@ -9,45 +9,20 @@
  * 3. Viewport is Desktop-size (mobile needs different animations <-- TODO)
  */
 
-const $ = s => document.querySelector(s);
-const $$ = s => Array.from(document.querySelectorAll(s));
-
-const body = $('body');
-const header = $('header');
-const main = $('main');
-const title = $('.title');
 
 const leftMainSection = $('#articles');
 const rightMainSection = $('#about');
 
-const fadeEntry = [
-    {opacity: 0 },
-    {opacity: 1 },
-];
+const naturalPosition = { opacity: 1, transform: 'translate3d(0, 0, 0)' };
 
-const upEntry = [
-    { opacity: 0, transform: 'translateY(50px)' },
-    { opacity: 1, transform: 'translateY(0px)' },
-];
-
-const downEntry = [
-    { opacity: 0, transform: 'translateY(-50px)' },
-    { opacity: 1, transform: 'translateY(0px)' },
-];
-
-const leftEntry = [
-    { opacity: 0, transform: 'translateX(50px)'},
-    { opacity: 1, transform: 'translateX(0px)'},
-];
-
-const rightEntry = [
-    { opacity: 0, transform: 'translateX(-50px)'},
-    { opacity: 1, transform: 'translateX(0px)'},
-];
+const upEntry = { opacity: 0, transform: 'translateY(50px)' };
+const downEntry = { opacity: 0, transform: 'translateY(-50px)' };
+const leftEntry = { opacity: 0, transform: 'translateX(50px)'};
+const rightEntry = { opacity: 0, transform: 'translateX(-50px)'};
 
 const expandEntry = [
-    {width: '0%'},
-    {width: '100%'}
+    { width: '0%' },
+    { width: '100%' }
 ];
 
 const entryAnimationTimings = {
@@ -55,7 +30,7 @@ const entryAnimationTimings = {
     easing: 'ease'
 };
 
-const createTitleunderline = () => {
+const createTitleUnderline = () => {
     const underline = document.createElement('span');
     underline.classList.add('underline');
     underline.setAttribute('role', 'presentation');
@@ -63,15 +38,15 @@ const createTitleunderline = () => {
     title.after(underline);
 };
 
-const createAnimation = (element, animationKeyframes) => {
-    const animation = element.animate(animationKeyframes, entryAnimationTimings);
+const createAnimation = (element, initialKeyframe, endKeyframe = naturalPosition) => {
+    const animation = element.animate([initialKeyframe, endKeyframe], entryAnimationTimings);
     animation.pause();
     animation.currentTime = 0;
 
     return animation;
 };
 
-createTitleunderline();
+createTitleUnderline();
 
 
 const begin = () => {
@@ -81,16 +56,14 @@ const begin = () => {
         return;
     } else {
         body.dataset.introState = 'playing';
-
     }
 
-    const underlineEntry = createAnimation($('.underline'), expandEntry);
+    const underlineEntry = createAnimation($('.underline'), ...expandEntry);
     const titleEntry = createAnimation(title, upEntry);
     const taglineEntry = createAnimation($('#tagline'), downEntry);
 
     const leftSectionEntry = createAnimation(leftMainSection, leftEntry);
     const rightSectionEntry = createAnimation(rightMainSection, rightEntry);
-
 
     setTimeout(() => underlineEntry.play(), 1000);
 
