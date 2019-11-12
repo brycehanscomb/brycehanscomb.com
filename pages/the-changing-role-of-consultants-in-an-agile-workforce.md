@@ -2,10 +2,6 @@
 
 ## Why Agile forces us to provide more value to clients than in traditional Waterfall projects.
 
-This article is coming soon!
-
-<!--
-
 With the adoption of Agile practices in enterprise, consultants must be increasingly
 involved with their clients' business needs.
 
@@ -53,4 +49,3 @@ Businesses have endured the risk associated with outsourced workers traditionall
 having autonomy around the implementation strategy for a product. As a result,
 many enterprises are moving to Agile, to reclaim their authority of ‘the how’ as
 well as ‘the what’.
--->

@@ -1,11 +1,14 @@
 @import "common.css";
 
 body {
+  border-left: 40px solid var(--secondary-color);
+  border-right: 40px solid var(--secondary-color);
 }
 
 header {
   background: var(--secondary-color);
   padding: 20px 0;
+  margin-bottom: 115px;
 }
 
 header .title {
@@ -82,15 +85,45 @@ nav a.current::after {
 }
 
 .intro {
-  padding: 100px;
+  margin-bottom: 100px;
 }
 
 main {
-  padding: 100px;
+  font-size: 25px;
 }
 
 .title {
 }
 
 .subtitle {
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #7f7f7f;
+  font-size: 30px;
+  margin-bottom: 100px;
+  font-weight: 300;
+}
+
+.subtitle::after,
+h2::after {
+  margin-top: 20px;
+  content: "";
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: var(--primary-color);
+}
+
+main p {
+  line-height: 1.4;
+}
+
+h2:not(.subtitle) {
+  margin: 1em 0;
 }

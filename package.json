@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "onchange": "^6.1.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "serve": "^11.2.0"
   },
   "scripts": {
     "build": "rm -rf build && mkdir build && cp index.html build/index.html",
