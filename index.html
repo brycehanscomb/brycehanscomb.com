@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="max-width=device-width; initial-scale=1">
-        <title>Bryce Hanscomb</title>
-        <script defer src="generate-blog-list.js"></script>
-        <link rel="stylesheet" href="index.css">
-        <script src="index-entry-animations.js" defer type="module"></script>
-        <script src="cross-page-transitions.js" defer type="module"></script>
-        <script>document.querySelector('.no-js').classList.remove('no-js')</script>
-    </head>
-    <body data-intro-state="unstarted">
-        <header>
-            <h1 class="title">Bryce Hanscomb</h1>
-            <p id="tagline">Front-End Web Developer in Melbourne, Australia</p>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="max-width=device-width; initial-scale=1" />
+    <title>Bryce Hanscomb</title>
+    <script defer src="generate-blog-list.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index-entry-animations.js" defer type="module"></script>
+    <script>
+      document.querySelector(".no-js").classList.remove("no-js");
+    </script>
+  </head>
+  <body data-intro-state="unstarted">
+    <header>
+      <h1 class="title">Bryce Hanscomb</h1>
+      <p id="tagline">Front-End Web Developer in Melbourne, Australia</p>
+    </header>
 
-        <main>
+    <main>
+      <section id="articles">
+        <h2 class="section-title">Latest Articles</h2>
+        <ul id="article-teasers"></ul>
+        <p>
+          <a class="page-link" href="#">More articles</a>
+        </p>
+      </section>
 
-            <section id="articles">
-                <h2 class="section-title">Latest Articles</h2>
-                <ul id="article-teasers">
-
-                </ul>
-                <p>
-                    <a class="page-link" href="#">More articles</a>
-                </p>
-            </section>
-
-            <section id="about">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    I build smart, scalable applications for the Australian Media, Finance and Technology sectors.
-                </p>
-                <nav>
-                    <ul>
-                        <li>
-                            <a class="page-link" href="/work">My work</a>
-                        </li>
-                        <li>
-                            <a class="page-link" href="https://github.com/brycehanscomb" rel="noreferrer">Open Source</a>
-                        </li>
-                        <li>
-                            <a class="page-link" href="mailto:bryce@brycehanscomb.com">Contact Me</a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-        </main>
-    </body>
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>
+          I build smart, scalable applications for the Australian Media, Finance
+          and Technology sectors.
+        </p>
+        <nav>
+          <ul>
+            <li>
+              <a class="page-link" href="/work">My work</a>
+            </li>
+            <li>
+              <a
+                class="page-link"
+                href="https://github.com/brycehanscomb"
+                rel="noreferrer"
+                >Open Source</a
+              >
+            </li>
+            <li>
+              <a class="page-link" href="mailto:bryce@brycehanscomb.com"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+  </body>
 </html>
