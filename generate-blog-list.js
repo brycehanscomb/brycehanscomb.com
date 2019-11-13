@@ -14,6 +14,8 @@ const createNode = ([url, title]) => {
 };
 
 const links = {
+  "how-to-make-a-testable-user-interface":
+    "How To Make A Testable User Interface",
   "the-changing-role-of-consultants-in-an-agile-workforce":
     "The Changing Role of Consultants in an Agile Workforce",
   "use-flux-standard-actions-for-http-patch":
