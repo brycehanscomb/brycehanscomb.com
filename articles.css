@@ -1,9 +1,19 @@
 @import "common.css";
 
+:root {
+  --document-outline-size: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+  :root {
+    --document-outline-size: 40px;
+  }
+}
+
 body {
-  border-left: 40px solid var(--secondary-color);
-  border-right: 40px solid var(--secondary-color);
-  border-bottom: 40px solid var(--secondary-color);
+  border-left: var(--document-outline-size) solid var(--secondary-color);
+  border-right: var(--document-outline-size) solid var(--secondary-color);
+  border-bottom: var(--document-outline-size) solid var(--secondary-color);
   padding-bottom: 100px;
 }
 
@@ -45,6 +55,12 @@ header .content-container {
 #masthead a {
   color: inherit;
   text-decoration: inherit;
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    display: none;
+  }
 }
 
 nav ul {
@@ -92,6 +108,13 @@ nav a.current::after {
 
 main {
   font-size: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .title {
