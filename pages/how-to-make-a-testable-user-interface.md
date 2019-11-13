@@ -7,7 +7,7 @@ we build on it has increased. Responsive design, touch screens, and rich media
 interactions have lead to an increase in the number of things that web developers need 
 to get right.
 
-And as we all know, software is really hard to get right Luckily, QA Engineers exist to
+And as we all know, software is really hard to get right. Luckily, QA Engineers exist to
 verify that what the Developers build is what the business wants. At a basic level, this 
 means verifying things like:
 
