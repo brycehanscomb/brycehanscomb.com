@@ -17,12 +17,17 @@ means verifying things like:
 
 As user expectations for quality in digital experiences reaches an all time high, 
 ensuring that UIs can be effectively tested by the QAs is critical. Catching issues
-before they reach production has shown to be 10 - 100 times cheaper to fix, and 
-ensures that user experiences remain smooth and delightful.
+before they reach production has shown to be 
+[orders-of-magnitude cheaper](https://www.jrothman.com/articles/2000/10/what-does-it-cost-you-to-fix-a-defect-and-why-should-you-care/)
+to fix, and ensures that user experiences remain smooth and delightful.
 
-## 5 Ways To Increase Testability
+It follows then that the easier it is for a QA to test a UI, the better their ability 
+to find defects. But what can web developers do to assist? 
 
-### 1. Expose Testing Hooks
+Here's five things web developers can do in the course of their duties to increase the
+testability of their user interfaces:
+
+## Expose Testing Hooks
 
 * Abstract away the DOM -- reference to the "Page Object" pattern
 * Don't rely on particular data (eg: select first invoice instead of hard-coding the 
@@ -30,7 +35,7 @@ first invoice we know of and then find by that one)
 * Expose values (eg: timestamps and currencies) un-formatted in machine-readable 
 formats so the automation agent doesn't have to re-parse UI data to check calculations
 
-### 2. Broadcast Events
+## Broadcast Events
 
 Allow the testing framework or automation agent to listen to events being sent from the
  page. They can then act/react based on them (instead of using timeouts, 
@@ -41,7 +46,7 @@ Allow the testing framework or automation agent to listen to events being sent f
 * When an error has occurred (allow automation agent to quit early instead of trying to
  infer error states from the UI)
  
-### 3. Co-locate the code and tests
+## Co-locate the code and tests
 
 * Sharing of testids, animation timings, etc. so tests can import and use them by 
 reference -- avoids duplication
@@ -49,12 +54,12 @@ reference -- avoids duplication
 as changes to code)
 * Can run existing test suites locally before any changes leave dev's machine
 
-### 4. Don't let unrelated errors hinder a specific test
+## Don't let unrelated errors hinder a specific test
 
 * Ensure small broken parts don't crash the whole app (that failing feature should 
 break its own tests)
 
-### 5. Get Developers to write more tests than just unit tests
+## Get Developers to write more tests than just unit tests
 
 * Reference to "The Testing Trophy" concept
 * Integration tests can be run using the same stack as e2e tests (eg: Cypress)
