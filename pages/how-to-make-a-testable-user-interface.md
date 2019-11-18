@@ -83,8 +83,10 @@ the expanded ones:
 
 Some other examples of stateful test hooks include:
 
-* `data-editable="true"` or `data-disabled="true"` on custom form elements
 * `data-visibility="hidden"` on things that shouldn't be visible
+* `data-state="loading"` on asynchronously-loaded data 
+* `data-destination="offsite"` on links that go to different domains
+* `data-editable="true"` or `data-disabled="true"` on custom form elements
 
 ## 2. Broadcast Events
 
