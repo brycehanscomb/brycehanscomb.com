@@ -31,9 +31,10 @@ do in the course of their duties to increase the testability of their user inter
 
 ### Named Test IDs For Specific Elements
 
-No UI test actually needs to assert that "a button with this particular class
-contains this particular text". A more effective test would seek to assert that "the submit 
-button contains the text `Submit`". The distinction is subtle but important.
+Given that [code is for humans](https://frontendmasters.com/teachers/kyle-simpson/code-is-for-humans/), 
+it's wise to avoid tests that assert things like _"a button with this particular 
+class contains this particular text"_. A more effective test would seek to assert
+that _"the submit button contains the text `Submit`"_. The distinction is subtle but important.
 
 Kent C Dodds [recommends adding attributes to specific DOM nodes](https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change).
 This enables QA to find the elements they're looking for, without having to 
@@ -110,6 +111,9 @@ reference -- avoids duplication
 * Avoid code and tests getting out of sync (changes to tests happen in the same commit 
 as changes to code)
 * Can run existing test suites locally before any changes leave dev's machine
+
+Remember: code from different technologies, projects and developers can live 
+together, but it [doesn't all have to be deployed together](https://devchat.tv/adv-in-angular/aia-256-debunking-monorepo-myths-with-victor-savkin/). 
 
 ## Don't let unrelated errors hinder a specific test
 
