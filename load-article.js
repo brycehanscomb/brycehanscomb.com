@@ -1,5 +1,7 @@
 "use strict";
 
+import {$} from "./common.js";
+
 const url = new URL(window.location);
 const main = document.querySelector("main");
 
@@ -32,6 +34,15 @@ const loadPage = async () => {
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
   });
+
+  setTimeout(() => {
+    if (url.hash.length) {
+      const targetEl = document.getElementById(url.hash.replace('#', ''));
+      if (targetEl) {
+        targetEl.scrollIntoView(true);
+      }
+    }
+  }, 1000);
 };
 
 if (url.searchParams.has("which")) {
