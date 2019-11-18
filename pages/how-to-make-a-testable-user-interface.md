@@ -56,8 +56,31 @@ For bonus points, you can then abstract away the DOM into a [Page Object](https:
 
 ### Positional Test Hooks For Iterable Elements
 
-* Don't rely on particular data (eg: select first invoice instead of hard-coding the 
-first invoice we know of and then find by that one)
+If your UI has things that appear in groups or lists, you'll want to enable the
+QAs to make _meaningful_, _semantic_ element selections.
+
+This could mean making it easier to:
+
+* Select the first relevant item from a list
+* Finding the right day button in a calendar-picker
+* Navigating pagination links
+* Selecting specific data without caring what the data actually is
+
+For example, a list of user profiles could add a hook on the element that 
+represents the current user's profile:
+
+```html
+<a class="profile">Aaron</a>
+<a class="profile">Betty</a>
+<a class="profile" data-testid="current-user">Charlie</a>
+<a class="profile">Denise</a>
+<a class="profile">Edward</a>
+```
+
+That way the test script doesn't need to keep track of (or hard-code) which user
+is logged in during the test. De-coupling the element selection logic from the
+test account data will reduce the reliance on any particular data value, and 
+make for easier refactoring. 
 
 ### Stateful Test Hooks For Elements That Change
 
@@ -89,6 +112,7 @@ Some other examples of stateful test hooks include:
 * `data-destination="offsite"` on links that go to different domains
 * `data-editable="true"` or `data-disabled="true"` on custom form elements
 * `data-animation="playing"` and `data-animation="finished"` on elements that have transitions
+* `data-status="paid"` or `data-status="overdue"` on invoices according to their payment status
 
 There are probably many more great examples you can use, but don't overdo it.
 Accidentally exposing too much internal state is a [recipe for disaster](https://kentcdodds.com/blog/testing-implementation-details).
@@ -112,7 +136,7 @@ reference -- avoids duplication
 as changes to code)
 * Can run existing test suites locally before any changes leave dev's machine
 
-Remember: code from different technologies, projects and developers can live 
+Remember that code from different technologies, projects and developers can live 
 together, but it [doesn't all have to be deployed together](https://devchat.tv/adv-in-angular/aia-256-debunking-monorepo-myths-with-victor-savkin/). 
 
 ## Don't let unrelated errors hinder a specific test
