@@ -63,6 +63,10 @@ header .content-container {
   }
 }
 
+main a {
+  text-decoration: underline;
+}
+
 nav ul {
   margin: 0;
   list-style: none;
@@ -151,4 +155,11 @@ main p {
 
 h2:not(.subtitle) {
   margin: 1em 0;
+}
+
+code:not([class^="language-"]) {
+  background: #e2e2e2;
+  font-size: 0.9em;
+  padding: 0.1em 0.2em;
+  border-radius: 0.2em;
 }

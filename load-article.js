@@ -28,6 +28,10 @@ const loadPage = async () => {
 
   createMetaDescription(main.querySelector(".subtitle").innerText);
   setTitle(main.querySelector(".title").innerText + " Â· Bryce Hanscomb");
+
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
 };
 
 if (url.searchParams.has("which")) {
