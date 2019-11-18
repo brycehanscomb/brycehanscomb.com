@@ -89,8 +89,8 @@ Some other examples of stateful test hooks include:
 * `data-editable="true"` or `data-disabled="true"` on custom form elements
 * `data-animation="playing"` and `data-animation="finished"` on elements that have transitions
 
-There are probably many more great examples you can use, but beware: don't 
-accidentally just expose internal state to QA: that's a [recipe for disaster](https://kentcdodds.com/blog/testing-implementation-details).
+There are probably many more great examples you can use, but don't overdo it.
+Accidentally exposing too much internal state is a [recipe for disaster](https://kentcdodds.com/blog/testing-implementation-details).
 
 ## 2. Broadcast Events
 
