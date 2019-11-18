@@ -87,6 +87,7 @@ Some other examples of stateful test hooks include:
 * `data-state="loading"` on asynchronously-loaded data 
 * `data-destination="offsite"` on links that go to different domains
 * `data-editable="true"` or `data-disabled="true"` on custom form elements
+* `data-animation="playing"` and `data-animation="finished"` on things that move
 
 ## 2. Broadcast Events
 
