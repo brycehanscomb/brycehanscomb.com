@@ -24,7 +24,7 @@ to fix, and ensures that user experiences remain smooth and delightful.
 It follows then that the easier it is for a QA to test a UI, the better their ability 
 to find defects. 
 
-But what can web developers do to assist? Here's five things web developers can 
+But what can web developers do to assist? Here's six things web developers can 
 do in the course of their duties to increase the testability of their user interfaces:
 
 ## 1. Expose Testing Hooks
@@ -93,15 +93,18 @@ the expanded ones:
 ```html
 <div data-state="collapsed">
     Lorum ipsum dolor sit amet...
+    <button>Show more</button>
 </div>
 
 <div data-state="expanded">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
     tempor incididunt ut labore et dolore magna aliqua.
+    <button>Show less</button>
 </div>
 
 <div data-state="collapsed">
     Lorum ipsum dolor sit amet...
+    <button>Show more</button>
 </div>
 ```
 
@@ -119,16 +122,50 @@ Accidentally exposing too much internal state is a [recipe for disaster](https:/
 
 ## 2. Broadcast Events
 
-Allow the testing framework or automation agent to listen to events being sent from the
- page. They can then act/react based on them (instead of using timeouts, 
- wait-till-visible, etc.)
+A large amount of QA effort is spent ensuring that [elements under test are actually
+ready to be tested](https://www.stickyminds.com/article/using-test-automation-timeouts-performance-alarms). 
+This means dealing with challenges like:
 
-* When page is ready to be interacted (for automation)
-* When animations are occurring (and finished)
-* When an error has occurred (allow automation agent to quit early instead of trying to
- infer error states from the UI)
- 
-## Co-locate the code and tests
+* Waiting for asynchronously-loaded data to be available
+* Inconsistent rendering times of UI components
+* Transitional animations
+* Detecting errored and invalid UI states
+* Page-change navigations and re-loads
+
+Many of these issues disappear if the test runner has some way of reliably 
+determining when it can actually do its assertions. An easy way to do that is by 
+exposing the state of an UI's _test-readiness_ to the test runner via standard event 
+broadcasting.
+
+Using the [JS Custom Event API](https://javascript.info/dispatch-events), you 
+could dispatch events in response to the things that happen in your
+interface. Then, the test runner or automation agent can listen for the things
+it cares about like when:
+
+1. The data has loaded
+2. Animations have started or finished
+3. An error has occurred (so the test should be abandoned, or the error handled)
+4. A long operation has finished
+5. The page has finished loading (or re-loading)
+
+All of these things save the QA Engineer from having to use UI content or DOM
+state from inferring the state of the UI, and will make for more deliberate, 
+self-explanatory test code.
+
+## 3. Co-Locate Code and Tests
+
+Sharing code across projects has such great benefits that [Google stores all of
+its code for all of its products](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext)
+in a single repo. The [meteoric rise of npm](https://www.pika.dev/about/stats) 
+has shortened the development time of Node and Web applications by innumerable hours.
+
+QA Engineers can achieve similar productivity benefits if they have access to 
+key parts of the application code as needed. Since the code and the tests for 
+that code have naturally high-cohesion, we should store them in the same place.
+
+This relationship-based coupling is the same idea as the [Group-By-Feature](https://reactjs.org/docs/faq-structure.html)
+architecture that we use in modern React projects, but extended to apply to all
+the supporting.
 
 * Sharing of testids, animation timings, etc. so tests can import and use them by 
 reference -- avoids duplication
@@ -136,20 +173,39 @@ reference -- avoids duplication
 as changes to code)
 * Can run existing test suites locally before any changes leave dev's machine
 
+And, even if there is orthogonal test code that must remain far from the application
+code, you can still keep them together via some [monorepo arrangement](https://danluu.com/monorepo/).
 Remember that code from different technologies, projects and developers can live 
 together, but it [doesn't all have to be deployed together](https://devchat.tv/adv-in-angular/aia-256-debunking-monorepo-myths-with-victor-savkin/). 
 
-## Don't let unrelated errors hinder a specific test
+## 4. Don't let unrelated errors hinder a specific test
 
 * Ensure small broken parts don't crash the whole app (that failing feature should 
 break its own tests)
 
-## Don't Duplicate Markup
+## 5. Don't Duplicate Markup
 
-* Don't have 2 menus, one for desktop one for mobile.  headless agents can't tell
-the difference
+This one is pretty simple. Since most test runners do DOM operations, the DOM is 
+really the only API that they have to infer the state of the UI. That is, most 
+assertions are not done via visual means, only checking the existence and inner
+content of various elements on the page.
 
-## Get Developers to write more tests than just unit tests
+For example, Desktop-only menus and Mobile-only menus with only CSS to control
+their appearance and behaviour will introduce unnecessary extra checks and 
+complexities for the QA team. Instead, just have one set of menu links and do
+what you need to do from there.
+
+If you have duplicated markup, then it's harder for the test runners (and the QA
+Engineers) to properly find the elements they're looking for.
+
+For bonus points, [use your application without CSS](https://css-tricks.com/that-time-i-tried-browsing-the-web-without-css/)
+to experience it through the eyes of screen readers, test runners and [text-only
+ browsers](https://lynx.invisible-island.net/). 
+If it makes sense without CSS, it will make sense with it. As they say in the 
+Music Production field: [_"If it sounds good on cheap speakers, it'll sound good
+anywhere"._](https://www.recordingrevolution.com/the-cheap-speaker-test/)
+
+## 6. Get Developers to write more tests than just unit tests
 
 * Reference to "The Testing Trophy" concept
 * Integration tests can be run using the same stack as e2e tests (eg: Cypress)

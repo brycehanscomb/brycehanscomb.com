@@ -5,15 +5,18 @@
   --secondary-color: #f2f2f2;
   --content-background-color: #fff;
   --content-color: #222;
+
+  --code-background-color: #e9e9e9;
 }
 
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --secondary-color: #444;*/
-/*    --content-color: #f2f2f2;*/
-/*    --content-background-color: #222;*/
-/*  }*/
-/*}*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --secondary-color: #444;
+    --content-color: #f2f2f2;
+    --content-background-color: #222;
+    --code-background-color: #444;
+  }
+}
 
 * {
   box-sizing: border-box;
