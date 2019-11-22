@@ -178,12 +178,37 @@ code, you can still keep them together via some [monorepo arrangement](https://d
 Remember that code from different technologies, projects and developers can live 
 together, but it [doesn't all have to be deployed together](https://devchat.tv/adv-in-angular/aia-256-debunking-monorepo-myths-with-victor-savkin/). 
 
-## 4. Don't let unrelated errors hinder a specific test
+## 4. Don't Let Unrelated Errors Hinder Specific Tests
 
-* Ensure small broken parts don't crash the whole app (that failing feature should 
-break its own tests)
+As good practice, developers should try to contain the ill-effects of an error
+to the smallest part of their applications as possible. An error thrown in an 
+AJAX query shouldn't crash a whole application. An error thrown in a UI 
+event handler shouldn't undermine the correct functionality of other things in 
+the UI. 
+
+Isolating failures is [a key part of building resilient 
+systems](https://medium.com/@adhorn/patterns-for-resilient-architecture-part-1-d3b60cd8d2b6), 
+and the same philosophy should be applied to the application's tests.
+
+If you're writing an e-commerce app for example, there would probably be tests
+that cover searching, filtering and ordering of products in a category. Some
+tests might verify the mechanics and functionality of price option filters and 
+others might verify the behaviour of colour option filters.
+
+Suppose during the running of the test suite, an error in the colour option 
+filters. Should this issue be caught by the colour option filter tests and fail 
+them? Yes. 
+
+Should that error fail the _price option_ filter tests? No. 
+
+A test should assert the correctness of the thing it attempts to verify. If it 
+does less than that, it's insufficient and you have unreliable tests. If it does
+more than that, your tests are violating the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+and should either be pared back or re-written.
 
 ## 5. Don't Duplicate Markup
+
+Depending on the 
 
 This one is pretty simple. Since most test runners do DOM operations, the DOM is 
 really the only API that they have to infer the state of the UI. That is, most 
@@ -205,7 +230,9 @@ If it makes sense without CSS, it will make sense with it. As they say in the
 Music Production field: [_"If it sounds good on cheap speakers, it'll sound good
 anywhere"._](https://www.recordingrevolution.com/the-cheap-speaker-test/)
 
-## 6. Get Developers to write more tests than just unit tests
+## 6. Write The Tests Yourself
+
+
 
 * Reference to "The Testing Trophy" concept
 * Integration tests can be run using the same stack as e2e tests (eg: Cypress)
