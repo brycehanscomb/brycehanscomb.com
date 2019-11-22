@@ -270,3 +270,16 @@ Cypress is all Node/JavaScript) so the developers needn't learn new tech.
 developers, and a higher level of un-siloed collaboration.
 * Regression suite is built alongside the feature and new bugs can have regression 
 tests delivered with the fix.
+
+## Conclusion
+
+Whatever software development methodology your business is using, the need for
+testing is high. 
+
+If developers can build their user interfaces to be more testable, a positive 
+feedback loop can be set in motion: higher-quality tests will lead to 
+higher-quality software. 
+
+Since we all want better software, see what you can do to make your user interfaces
+more testable than before, and work with your QA team to understand what they
+would value from your discipline to enable them to do their part better.
