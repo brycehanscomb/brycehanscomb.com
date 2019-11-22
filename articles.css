@@ -167,3 +167,16 @@ code:not([class^="language-"]) {
 main li {
   margin-bottom: 0.3em;
 }
+
+blockquote {
+  background: var(--code-background-color);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1em;
+  font-style: italic;
+  border-left: 10px solid var(--primary-color);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}

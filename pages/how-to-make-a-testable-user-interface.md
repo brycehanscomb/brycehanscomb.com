@@ -232,11 +232,41 @@ anywhere"._](https://www.recordingrevolution.com/the-cheap-speaker-test/)
 
 ## 6. Write The Tests Yourself
 
+QA Engineers are a necessary and important part of software development, but
+they should never be seen as babysitters who test your code so you don't have to.
 
+As John Sonmez [puts it](https://simpleprogrammer.com/software-developers-qa-testers/):
 
-* Reference to "The Testing Trophy" concept
-* Integration tests can be run using the same stack as e2e tests (eg: Cypress)
-* Testers can verify a test's usefulness instead of writing it from scratch, allowing 
-testers to spend more time on other activities ie: exploratory testing
+> QA is a last defense before your code goes out and wreaks havoc on your customers.
+> Don’t expect testers to find your bugs, expect them to validate that your code works.
+> It’s your responsibility to test your code before you hand it over to QA.
+
+Obviously you're already writing unit tests for your code so why not also [write 
+some integration tests and end-to-end tests while you're at it](https://testingjavascript.com/)?
+After all, you know the features, you know the tricky bits, and you know a good 
+range of input parameters that can verify your code works as expected. 
+
+Sure, high-quality QA Engineers will probably still be able to imagine more
+testing scenarios than you can -- but the value-add you can bring to the table
+should not be understated.
+
+The advantages of developers writing some of the tests normally done by QA
+include:
+
+* Tests delivered alongside features means a reduction or elimination of outdated
+tests. As features are created, updated or removed, the tests can also follow
+suit without a cross-departmental delay.
+* Having basic test scenarios written with the feature code means the catastrophic
+and obvious defects should never arise -- if the feature is clearly broken, the
+developer's own tests wouldn't have passed.
+* It's probably faster for a developer to write certain test scenarios during
+the course of the feature's development than to get QA's "fresh eyes" on it for
+all scenarios.
+* Many testing stacks can use similar technology to the development stack (eg: 
+Cypress is all Node/JavaScript) so the developers needn't learn new tech.
+* Testers can spend more time working on higher-quality tests, or do more 
+[exploratory testing](https://www.testingexcellence.com/exploratory-testing-important-agile-projects/).
+* Greater understanding of the role of QA in the software development process for
+developers, and a higher level of un-siloed collaboration.
 * Regression suite is built alongside the feature and new bugs can have regression 
 tests delivered with the fix.
