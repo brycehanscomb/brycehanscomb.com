@@ -7,25 +7,25 @@ we build on it has increased. Responsive design, touch screens, and rich media
 interactions have lead to an increase in the number of things that web developers need 
 to get right.
 
-And as we all know, software is really hard to get right. Luckily, QA Engineers exist to
-verify that what the Developers build is what the business wants. At a basic level, this 
-means verifying things like:
+And as we all know, software is really hard to get right. Luckily, QA Engineers 
+exist to verify what Developers build is what the business wants. At a basic level, 
+this means verifying things like:
 
 * Does the product do what it's meant to do?
 * Does the product properly handle edge cases and failure modes?
 * Does the product have adequate performance and security?
 
 As user expectations for quality in digital experiences reaches an all time high, 
-ensuring that UIs can be effectively tested by the QAs is critical. Catching issues
-before they reach production has shown to be 
-[orders-of-magnitude cheaper](https://www.jrothman.com/articles/2000/10/what-does-it-cost-you-to-fix-a-defect-and-why-should-you-care/)
+ensuring UIs can be effectively tested by QA is critical. Catching issues before 
+they reach production has shown to be [orders-of-magnitude cheaper](https://www.jrothman.com/articles/2000/10/what-does-it-cost-you-to-fix-a-defect-and-why-should-you-care/)
 to fix, and ensures that user experiences remain smooth and delightful.
 
-It follows then that the easier it is for a QA to test a UI, the better their ability 
-to find defects. 
+So what does this mean for UI developers? The easier it is for QA to test a UI, 
+the better their ability to find defects. And the more defects are found before
+the users do, the better your software can be upon release.
 
-But what can web developers do to assist? Here's six things web developers can 
-do in the course of their duties to increase the testability of their user interfaces:
+With that in mind, here's six things web developers can do in the course of 
+their duties to increase the testability of their user interfaces:
 
 ## 1. Expose Testing Hooks
 
@@ -62,7 +62,7 @@ QAs to make _meaningful_, _semantic_ element selections.
 This could mean making it easier to:
 
 * Select the first relevant item from a list
-* Finding the right day button in a calendar-picker
+* Finding today's date in a calendar-picker
 * Navigating pagination links
 * Selecting specific data without caring what the data actually is
 
@@ -122,9 +122,9 @@ Accidentally exposing too much internal state is a [recipe for disaster](https:/
 
 ## 2. Broadcast Events
 
-A large amount of QA effort is spent ensuring that [elements under test are actually
+A large amount of QA effort is spent making sure [elements under test are actually
 ready to be tested](https://www.stickyminds.com/article/using-test-automation-timeouts-performance-alarms). 
-This means dealing with challenges like:
+This means facing challenges like:
 
 * Waiting for asynchronously-loaded data to be available
 * Inconsistent rendering times of UI components
@@ -134,7 +134,7 @@ This means dealing with challenges like:
 
 Many of these issues disappear if the test runner has some way of reliably 
 determining when it can actually do its assertions. An easy way to do that is by 
-exposing the state of an UI's _test-readiness_ to the test runner via standard event 
+exposing the state of a UI's _test-readiness_ to the test runner via standard event 
 broadcasting.
 
 Using the [JS Custom Event API](https://javascript.info/dispatch-events), you 
@@ -208,16 +208,14 @@ and should either be pared back or re-written.
 
 ## 5. Don't Duplicate Markup
 
-Depending on the 
-
 This one is pretty simple. Since most test runners do DOM operations, the DOM is 
 really the only API that they have to infer the state of the UI. That is, most 
 assertions are not done via visual means, only checking the existence and inner
 content of various elements on the page.
 
-For example, Desktop-only menus and Mobile-only menus with only CSS to control
-their appearance and behaviour will introduce unnecessary extra checks and 
-complexities for the QA team. Instead, just have one set of menu links and do
+For example, having Desktop-only menus and Mobile-only menus with only CSS to 
+control their appearance and behaviour will introduce unnecessary extra checks 
+and complexities in QA. Instead, just have one set of menu links and do
 what you need to do from there.
 
 If you have duplicated markup, then it's harder for the test runners (and the QA
@@ -271,15 +269,18 @@ developers, and a higher level of un-siloed collaboration.
 * Regression suite is built alongside the feature and new bugs can have regression 
 tests delivered with the fix.
 
+For bonus points, go speak with someone in your QA team if you need help getting 
+started or getting some testing tips -- this is the game they're best at!
+
 ## Conclusion
 
 Whatever software development methodology your business is using, the need for
-testing is high. 
+testing is paramount. 
 
-If developers can build their user interfaces to be more testable, a positive 
-feedback loop can be set in motion: higher-quality tests will lead to 
+If developers can build their user interfaces to enable easier testing, a 
+positive feedback loop can be set in motion: higher-quality tests will lead to 
 higher-quality software. 
 
-Since we all want better software, see what you can do to make your user interfaces
-more testable than before, and work with your QA team to understand what they
-would value from your discipline to enable them to do their part better.
+We all want better software. See what you can do to make user interfaces easier 
+to test and collaborate with your QA team to understand what would it take to 
+make their job easier.
