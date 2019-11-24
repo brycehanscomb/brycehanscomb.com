@@ -269,7 +269,7 @@ Cypress is all Node/JavaScript) so you needn't learn any new tech to write tests
 * A regression suite is built alongside the feature and new bugs can have regression 
 tests delivered with the fix.
 
-Maybe the most important reason of all is you'll gain a greater understanding of the
+Maybe the most important benefit is that you'll gain a greater understanding of the
 role of QA in the software development process, and you'll increase your 
 cross-discipline collaboration.
 
