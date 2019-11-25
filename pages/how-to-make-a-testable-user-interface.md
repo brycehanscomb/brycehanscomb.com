@@ -77,8 +77,8 @@ represents the current user's profile:
 <a class="profile">Edward</a>
 ```
 
-That way the test script doesn't need to keep track of (or hard-code) which user
-is logged in during the test. De-coupling the element selection logic from the
+That way the test script doesn't need to keep track of (or hard code) which user
+is logged in during the test. Decoupling the element selection logic from the
 test account data will reduce the reliance on any particular data value, and 
 make for easier refactoring. 
 
@@ -130,7 +130,7 @@ This means facing challenges like:
 * Inconsistent rendering times of UI components
 * Transitional animations
 * Detecting errored and invalid UI states
-* Page-change navigations and re-loads
+* Page-change navigations and reloads
 
 Many of these issues disappear if the test runner has some way of reliably 
 determining when it can actually do its assertions. An easy way to do that is by 
@@ -146,7 +146,7 @@ it cares about like when:
 2. Animations have started or finished
 3. An error has occurred (so the test should be abandoned, or the error handled)
 4. A long operation has finished
-5. The page has finished loading (or re-loading)
+5. The page has finished loading (or reloading)
 
 All of these things save the QA Engineer from having to use UI content or DOM
 state from inferring the state of the UI, and will make for more deliberate, 
@@ -204,7 +204,7 @@ Should that error fail the _price option_ filter tests? No.
 A test should assert the correctness of the thing it attempts to verify. If it 
 does less than that, it's insufficient and you have unreliable tests. If it does
 more than that, your tests are violating the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
-and should either be pared back or re-written.
+and should be decomposed.
 
 ## 5. Don't Duplicate Markup
 
@@ -214,7 +214,7 @@ assertions are not done via visual means, only checking the existence and inner
 content of various elements on the page.
 
 For example, having Desktop-only menus and Mobile-only menus with only CSS to 
-control their appearance and behaviour will introduce unnecessary extra checks 
+control their appearance and behaviour will introduce unnecessary checks 
 and complexities in QA. Instead, just have one set of menu links and do
 what you need to do from there.
 
@@ -244,9 +244,8 @@ some integration tests and end-to-end tests while you're at it](https://testingj
 After all, you know the features, you know the tricky bits, and you know a good 
 range of input parameters that can verify your code works as expected. 
 
-Sure, high-quality QA Engineers will probably still be able to imagine more
-testing scenarios than you can -- but the value-add you can bring to the table
-should not be understated.
+Sure, high quality QA Engineers are likely imagine more testing scenarios than 
+you can -- but the value-add you can bring to the table should not be understated.
 
 The advantages of developers writing some of the tests normally done by QA
 include:
