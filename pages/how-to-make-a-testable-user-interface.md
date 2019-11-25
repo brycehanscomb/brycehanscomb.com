@@ -241,12 +241,12 @@ As John Sonmez [puts it](https://simpleprogrammer.com/software-developers-qa-tes
 > Don’t expect testers to find your bugs, expect them to validate that your code works.
 > It’s your responsibility to test your code before you hand it over to QA.
 
-Obviously you're already writing unit tests for your code, so why not also [write 
-some integration tests and end-to-end tests while you're at it](https://testingjavascript.com/)?
+Obviously you're already writing unit tests for your code, so why not [write 
+some integration tests and end-to-end tests as well](https://testingjavascript.com/)?
 After all, _you_ know the features, _you_ know the tricky bits, and _you_ know a good 
 range of input parameters that can verify your code works as expected. 
 
-Sure, high quality QA Engineers are likely imagine more testing scenarios than 
+Sure, high quality QA Engineers will likely imagine more testing scenarios than 
 you can -- but the value-add you can bring to the table should not be understated.
 
 The advantages of developers writing some of the tests normally done by QA
