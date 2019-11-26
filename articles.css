@@ -192,3 +192,9 @@ main img {
   max-width: 100%;
   border: 20px solid var(--secondary-color);
 }
+
+.article-teaser {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}

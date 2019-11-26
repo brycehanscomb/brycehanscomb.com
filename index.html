@@ -5,7 +5,7 @@
     <meta name="viewport" content="max-width=device-width; initial-scale=1" />
     <title>Bryce Hanscomb</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <script defer src="generate-blog-list.js"></script>
+    <script defer src="generate-blog-list.js" type="module"></script>
     <link rel="stylesheet" href="index.css" />
     <script src="index-entry-animations.js" defer type="module"></script>
     <script>
@@ -22,8 +22,13 @@
       <section id="articles">
         <h2 class="section-title">Latest Articles</h2>
         <ul id="article-teasers"></ul>
+        <noscript>
+          <p>
+            Follow the link below to see all the latest articles.
+          </p>
+        </noscript>
         <p>
-          <a class="page-link" href="#">More articles</a>
+          <a class="page-link" href="/articles">All articles</a>
         </p>
       </section>
 

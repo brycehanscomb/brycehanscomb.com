@@ -1,11 +1,13 @@
 {
   "dependencies": {
+    "fs-extra": "^8.1.0",
     "onchange": "^6.1.0",
     "prettier": "^1.19.1",
     "serve": "^11.2.0"
   },
   "scripts": {
-    "build": "rm -rf build && mkdir build && cp index.html build/index.html",
+    "start":  "yarn run build && serve .",
+    "build": "node build.js",
     "prettier-watch": "onchange '*' -- prettier --write {{changed}}"
   }
 }

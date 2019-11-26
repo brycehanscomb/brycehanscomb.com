@@ -1,8 +1,10 @@
 "use strict";
 
-const container = document.querySelector("#article-teasers");
+import {$} from './common.js';
 
-const createNode = ([url, title]) => {
+const container = $("#article-teasers");
+
+const createNode = ([url, {title, subtitle}]) => {
   const newParent = document.createElement("li");
   const newLink = document.createElement("a");
 
@@ -13,16 +15,7 @@ const createNode = ([url, title]) => {
   container.appendChild(newParent);
 };
 
-const links = {
-  "how-to-make-a-testable-user-interface":
-    "How To Make A Testable User Interface",
-  "exittext": "ExitText: A Tool To Uncover Design",
-  "the-changing-role-of-consultants-in-an-agile-workforce":
-    "The Changing Role of Consultants in an Agile Workforce",
-  "use-flux-standard-actions-for-http-patch":
-    "Use Flux Standard Actions for HTTP PATCH ",
-  "why-sitepoint-lost-against-incremental-evil":
-    "Why SitePoint Lost Against Incremental Evil"
-};
-
-Object.entries(links).forEach(createNode);
+(async () => {
+    const links = await fetch('/blog-links.json').then(r => r.json());
+    Object.entries(links).forEach(createNode);
+})();

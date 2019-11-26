@@ -45,6 +45,30 @@ const loadPage = async () => {
   }, 1000);
 };
 
+const createIndexLink = (slug, {title, subtitle}) => {
+  const container = document.createElement('a');
+  container.setAttribute('href', `/articles?which=${slug}`);
+  container.setAttribute('class', 'article-teaser');
+  container.innerHTML = `
+    <h2 class="article-teaser__title">${title}</h2>
+    <p class="article-teaser__subtitle">${subtitle}</p>
+  `;
+
+  main.appendChild(container);
+};
+
+const loadIndex = async () => {
+  const blogLinks = await fetch('/blog-links.json').then(r => r.json());
+
+  const title = document.createElement('h1');
+  title.innerText = 'All Articles';
+  main.appendChild(title);
+
+  Object.entries(blogLinks).forEach(([slug, title]) => createIndexLink(slug, title));
+};
+
 if (url.searchParams.has("which")) {
   loadPage();
+} else {
+  loadIndex();
 }
