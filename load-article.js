@@ -18,7 +18,7 @@ const setTitle = title => {
 };
 
 const loadPage = async () => {
-  const pageDataUrl = `pages/${url.searchParams.get("which")}.md`;
+  const pageDataUrl = `/pages/${url.searchParams.get("which")}.md`;
 
   const res = await fetch(pageDataUrl);
   const text = await res.text();
