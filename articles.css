@@ -114,10 +114,17 @@ main {
   font-size: 25px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 639px) {
   main {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 1120px) {
+  main {
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -179,4 +186,9 @@ blockquote {
 
 blockquote p:last-child {
   margin-bottom: 0;
+}
+
+main img {
+  max-width: 100%;
+  border: 20px solid var(--secondary-color);
 }

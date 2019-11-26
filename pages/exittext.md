@@ -18,16 +18,16 @@ I've made a tool called [ExitText](http://brycehanscomb.github.io/exittext/) tha
 designers evaluate the _gestalt_ of a type-heavy webpage, and [it's
 available on GitHub now](http://brycehanscomb.github.io/exittext/).
 
-### Remove text, uncover design
+## Remove Text, Uncover Design
 
 This is what [The Onion](https://theonion.com)’s homepage looks like
 normally:
 
-![Before](images/exittext-the-onion-before.png)
+![Before](/assets/images/exittext-the-onion-before.png)
 
 Here is what happens when ExitText replaces all the fonts with shapes:
 
-![After](images/exittext-the-onion-after.png)
+![After](/assets/images/exittext-the-onion-after.png)
 
 Notice the difference it makes: the words can’t be read, so more
 attention can be paid to the layout.
@@ -36,7 +36,7 @@ The hierarchy becomes more clear and the text’s structure, placement and
 size can be evaluated without being caught up in the nitty-gritty of
 what the content actually says.
 
-### How ExitText works
+## How It Works
 
 After learning about [embedding base64-encoded font files into CSS
 stylesheets from Steven
@@ -49,6 +49,8 @@ consisting entirely of squiggled lines.
 When activated, ExitText will remove text on the current page and
 replace it with scribbles. It’s open source and [available for
 installation on GitHub](http://brycehanscomb.github.io/exittext).
+
+## Integrations
 
 ExitText's featureset has also been incorporated into
 [Wirify](https://www.wirify.com/2017/09/redact-and-greeking-features-available-in-wirify/)
