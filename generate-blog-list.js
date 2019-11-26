@@ -6,7 +6,7 @@ const createNode = ([url, title]) => {
   const newParent = document.createElement("li");
   const newLink = document.createElement("a");
 
-  newLink.href = `/articles.html?which=${url}`;
+  newLink.href = `/articles?which=${url}`;
   newLink.innerText = title;
 
   newParent.appendChild(newLink);

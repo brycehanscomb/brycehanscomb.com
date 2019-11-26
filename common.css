@@ -47,9 +47,3 @@ main a {
 main a:hover {
   text-decoration: underline;
 }
-
-main a:focus {
-  outline: none;
-  background: var(--primary-color);
-  color: white;
-}

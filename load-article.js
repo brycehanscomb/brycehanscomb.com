@@ -29,7 +29,7 @@ const loadPage = async () => {
   main.querySelector("h2").classList.add("subtitle");
 
   createMetaDescription(main.querySelector(".subtitle").innerText);
-  setTitle(main.querySelector(".title").innerText + " Â· Bryce Hanscomb");
+  setTitle(main.querySelector(".title").innerText + " · Bryce Hanscomb");
 
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
