@@ -1,0 +1,35 @@
+@import "./common.css";
+@import "_inner-page-common.css";
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-teaser {
+    display: block;
+    color: inherit;
+    border-left: 7px solid var(--primary-color);
+    padding: 0 30px;
+}
+
+.article-teaser:first-of-type {
+    margin-top: 50px;
+}
+
+.article-teaser:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.article-teaser:hover {
+    text-decoration: none;
+}
+
+.article-teaser:hover .article-teaser__title {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.article-teaser__subtitle {
+    margin-bottom: 0;
+}

@@ -47,7 +47,7 @@ const loadPage = async () => {
 
 const createIndexLink = (slug, {title, subtitle}) => {
   const container = document.createElement('a');
-  container.setAttribute('href', `/articles?which=${slug}`);
+  container.setAttribute('href', `/article?which=${slug}`);
   container.setAttribute('class', 'article-teaser');
   container.innerHTML = `
     <h2 class="article-teaser__title">${title}</h2>
@@ -61,8 +61,18 @@ const loadIndex = async () => {
   const blogLinks = await fetch('/blog-links.json').then(r => r.json());
 
   const title = document.createElement('h1');
-  title.innerText = 'All Articles';
+  title.innerText = 'Blogs & Articles';
   main.appendChild(title);
+
+  const intro = document.createElement('section');
+  intro.innerHTML = `
+    <p>I write about technology, media and design.</p>
+    <p>If you would like to post a correction to any of these articles, 
+    please <a href="https://github.com/brycehanscomb/brycehanscomb.com">file a pull request</a> 
+    on GitHub.</p>
+  `;
+
+  main.appendChild(intro);
 
   Object.entries(blogLinks).forEach(([slug, title]) => createIndexLink(slug, title));
 };
