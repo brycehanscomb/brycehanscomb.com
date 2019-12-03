@@ -15,6 +15,22 @@
 </head>
 <body>
 <header>
+    <script>
+        const scrollRight = () => window.scrollBy(30, 30);
+        const scrollLeft = () => window.scrollBy(-30, -30);
+
+        window.addEventListener('keydown', (event) => {
+            // if (['ArrowDown', 'ArrowUp'].includes(event.key)) {
+            //     event.preventDefault();
+            // }
+            //
+            // if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+            //     scrollRight();
+            // } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+            //     scrollLeft();
+            // }
+        });
+    </script>
     <div class="content-container">
         <p id="masthead"><a href="/">Bryce Hanscomb</a></p>
                 <nav>
