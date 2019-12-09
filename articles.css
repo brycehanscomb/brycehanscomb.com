@@ -58,6 +58,7 @@ code:not([class^="language-"]) {
   font-size: 0.9em;
   padding: 0.1em 0.2em;
   border-radius: 0.2em;
+  word-break: break-all;
 }
 
 code[class^="language-"] {
