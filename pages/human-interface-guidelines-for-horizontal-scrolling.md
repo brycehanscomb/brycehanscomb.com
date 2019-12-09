@@ -1,10 +1,13 @@
+
 # Human Interface Guidelines For Horizontal Scrolling
 
 ## Things to consider when building web UIs that go sideways.
 
-The modern web allows for some truly amazing interaction design. Some of it is
-so good, we honour the excellence of the best designers and developers with 
-[actual awards](https://www.webbyawards.com/). 
+## ⚠️ WARNING! ⚠️ This article is still being written and isn't finished yet haha
+
+The modern web allows for some truly amazing interaction design. Some of
+it is so good, we honour the excellence of the best designers and
+developers with [actual awards](https://www.webbyawards.com/).
 
 However, there are websites winning awards for their [horizontal-scrolling design](https://www.awwwards.com/websites/horizontal-layout/)
 that actually have poor UX. This article aims to provide a baseline reference for those web developers who
@@ -131,18 +134,98 @@ For bonus points, use the
 some specific UX callout that alerts the user to which element was
 hotlinked.
 
+## Scrolling Via The Mouse Wheel
+
+In addition to navigating via the keyboard, users may also use mice with
+a scrolling wheel. When used, this fires a `wheel` event that you'll
+want to intercept and redirect into scrolling sideways. A naive
+implementation might look something like this:
+
+```javascript
+window.addEventListener('wheel', (event) => {
+    // if this is already a horizontal scroll (like on 360-degree mousewheels)
+    // then don't do anything; let the browser scroll horizontally for us.
+    if (event.deltaX) {
+        return;
+    }
+    
+    // Stop the browser from moving the viewport.
+    // This also prevents any subsequent `scroll` events from firing.
+    event.preventDefault();
+    
+    const delta = event.deltaY;
+    const currentXPosition = document.documentElement.scrollLeft;
+    const currentYPosition = document.documentElement.scrollTop;
+    
+    window.scrollTo(
+        currentXPosition + delta, // works for event negative values 
+        currentYPosition
+    );
+});
+```
+
+On all good operating systems, the `deltaY` property will be normalised
+so that if the user has their
+[mouse scroll direction changed](https://www.wikihow.com/Change-Scroll-Direction-on-a-Mac),
+it should still be a positive number when the user intends to scroll
+further into the document (to the right) and a negative number to scroll
+closer to the document's beginning (to the left).
+
+## OS-Native Gestures
+
+Some operating systems
+[(like MacOS)](https://support.apple.com/en-us/HT204895) have a GUI
+feature that allows the user to navigate between pages in an app using a
+horizontal two-finger trackpad swipe. 
+
+Unfortunately that's exactly the same gesture as a horizontal scroll, so
+your users might accidentally go back one page in their browser history
+when they try to scroll along the x-axis.
+
+I'm not sure what to do about this.
+
+## Scroll Anchoring
+
+All modern browsers support an "invisible" feature of the web called
+_Scroll Anchoring_. As the
+[W3C Spec Proposal](https://github.com/WICG/ScrollAnchoring/blob/master/explainer.md)
+explains it:
+
+<blockquote>
+Today, users of the web are often distracted by content moving around
+due to changes that occur outside the viewport. Examples include script
+inserting an iframe containing an ad, or non-sized images loading on a
+slow network. 
+</blockquote>
+
+MDN continues:
+
+<blockquote>
+Scroll anchoring adjusts the scroll position to compensate for the
+changes outside of the viewport. This means that the point in the
+document the user is looking at remains in the viewport, which may mean
+their scroll position actually changes in terms of how far they have
+moved through the document. 
+</blockquote>
+
+todo: determine if:
+1. scroll anchoring works natively on horizontal documents
+2. scroll anchoring works natively in nested horizontal elements
+3. scroll anchoring works on manually `transform`-ed elements
+4. scroll anchoring works on resize
+5. scroll anchoring works on device rotations
+
 -----
 -----
 
-* Keyboard shortcuts
-    - fn+arrow keys
+#### TODO: 
+
 * Smooth scrolling
-* Mouse wheel
 * Zoomin / zoomout
 * css position sticky implications
 * long paragraphs still overflow vertically (watch your screen height)
-* careful of chrome's back-and-forward navigation gestures
-* persist scroll position when returning via back-button
+* persist scroll position when returning via back-button ("history
+  scroll restoration")
 * maintain scroll position on window resize
 * information hierarchy (H1's at the top...or the left?)
 * what about the footer?
@@ -153,3 +236,5 @@ hotlinked.
 * non left-to-right text layouts
 * more-content hints (to avoid False Bottoms)
 * don't hide the scrollbars!
+* allowing users to vertically scroll tall content (un-overriding the
+  scroll events)
