@@ -1,4 +1,3 @@
-
 # Human Interface Guidelines For Horizontal Scrolling
 
 ## Things to consider when building web UIs that go sideways.

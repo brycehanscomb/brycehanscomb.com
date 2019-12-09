@@ -5,7 +5,7 @@ const orderedArticleSlugs = require('./articles-order.json');
 
 const getTitle = async (slug) => {
     const articleText = await fs.readFileSync(path.join('./pages', slug + '.md'), 'utf-8');
-    const [title, _, subtitle] = articleText.split('\n');
+    const [title, _, subtitle] = articleText.trim().split('\n');
     const articleTitle = title.replace(/#/g, '').trim();
     const articleSubtitle = subtitle.replace(/#/g, '').trim();
     return {slug, title: articleTitle, subtitle: articleSubtitle};
