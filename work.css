@@ -1,0 +1,32 @@
+@import "common.css";
+@import "_inner-page-common.css";
+
+.portfolio-item {
+    display: grid;
+    grid-template-areas:
+        "thumbnail title"
+        "thumbnail position"
+        "thumbnail description"
+    ;
+
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 1em;
+}
+
+.portfolio-item__screenshot {
+    grid-area: thumbnail;
+    width: 100%;
+}
+
+.portfolio-item__title {
+    grid-area: title;
+}
+
+.portfolio-item__description {
+    grid-area: description;
+}
+
+.portfolio-item__position {
+    grid-area: position;
+}

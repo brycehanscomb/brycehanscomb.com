@@ -6,19 +6,40 @@
     <title>Bryce Hanscomb</title>
     <script src="marked.js"></script>
     <script src="load-article.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="work.css" />
+    <script>void 0;</script>
   </head>
   <body>
-    <header>
-      <p><a href="/">Bryce Hanscomb</a></p>
-      <p id="tagline">Front-End Web Developer in Melbourne, Australia</p>
-    </header>
+  <header>
+    <div class="content-container">
+      <p id="masthead"><a href="/">Bryce Hanscomb</a></p>
+      <nav>
+        <ul>
+          <li><a href="/articles">Articles</a></li>
+          <li><a class="current" href="/work">Work</a></li>
+          <!--            <li><a href="/contact">Contact</a></li>-->
+        </ul>
+      </nav>
+    </div>
+  </header>
 
     <main>
+      <h1>My Work</h1>
+      <p>I like to build web things for big digital-first brands.</p>
       <p>
-        This page is under construction on account of all the work I'm doing ;)
+        With a focus on usability, scalability and good-world-value,
+        I'm grateful to have played a part in some really cool things.
+        Here's the latest of them:
       </p>
+      <div class="portfolio-item">
+        <h3 class="portfolio-item__title">Aeon Media Group</h3>
+        <img src="https://placekitten.com/640/480" alt="" class="portfolio-item__screenshot" />
+        <p class="portfolio-item__position"><em>Psyche</em> &mdash; Team Lead</p>
+        <p class="portfolio-item__description">
+          I led a product team to transform a Rails-based custom CMS
+          into a multisite-compatible GraphQL API data layer and delivered
+          the new <em>Psyche.co</em> digital magazine.
+      </div>
     </main>
   </body>
 </html>

@@ -33,7 +33,7 @@ body {
      * @see https://stackoverflow.com/a/23889196
      */
   word-spacing: 100vw;
-
+  font-family: "Raleway", sans-serif;
   font-size: 50px;
 }
 

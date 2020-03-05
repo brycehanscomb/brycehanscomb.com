@@ -18,13 +18,8 @@ body {
 header {
   background: var(--secondary-color);
   padding: 20px 0;
-  margin-bottom: 115px;
-}
-
-header {
-  background: var(--secondary-color);
-  padding: 20px 0;
-  margin-bottom: 115px;
+  margin-bottom: 60px;
+  font-family: "Raleway", sans-serif;
 }
 
 header .content-container {
@@ -113,4 +108,10 @@ nav a.current::after {
   height: 5px;
   background: var(--primary-color);
   bottom: -27px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Raleway", sans-serif;
 }
