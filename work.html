@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="max-width=device-width; initial-scale=1" />
     <title>Bryce Hanscomb</title>
     <script src="marked.js"></script>
-    <script src="load-article.js" defer></script>
+    <script type="module" src="work.js" defer></script>
     <link rel="stylesheet" href="work.css" />
     <script>void 0;</script>
+    <script>document.documentElement.classList.remove('no-js')</script>
   </head>
   <body>
   <header>
@@ -23,23 +24,60 @@
     </div>
   </header>
 
-    <main>
-      <h1>My Work</h1>
-      <p>I like to build web things for big digital-first brands.</p>
+    <main class="content-container">
+      <h1>
+        I build great software.
+      </h1>
       <p>
-        With a focus on usability, scalability and good-world-value,
-        I'm grateful to have played a part in some really cool things.
-        Here's the latest of them:
+        My focus is on human-computer interaction, usability, and proving to
+        Apple that the web is <em>way cooler</em> than the App Store.
+        Here's a random sampling of the things I work with:
       </p>
-      <div class="portfolio-item">
-        <h3 class="portfolio-item__title">Aeon Media Group</h3>
-        <img src="https://placekitten.com/640/480" alt="" class="portfolio-item__screenshot" />
-        <p class="portfolio-item__position"><em>Psyche</em> &mdash; Team Lead</p>
-        <p class="portfolio-item__description">
-          I led a product team to transform a Rails-based custom CMS
-          into a multisite-compatible GraphQL API data layer and delivered
-          the new <em>Psyche.co</em> digital magazine.
+      <div id="skills-marquee-container">
+        <ul data-hidden-until-initialized id="skills-marquee">
+          <li>React</li>
+          <li>Redux</li>
+          <li>GraphQL</li>
+          <li>Typescript</li>
+          <li>Node.js</li>
+          <li>ES6+</li>
+          <li>Webpack</li>
+          <li>Vue.js</li>
+          <li>HTML5</li>
+          <li>CSS</li>
+          <li>Ruby on Rails</li>
+          <li>AWS EC2</li>
+          <li>AWS Lambda</li>
+          <li>AWS DynamoDB</li>
+          <li>AWS IAM</li>
+          <li>Responsive Design</li>
+          <li>TDD</li>
+          <li>OOP</li>
+          <li>FP</li>
+          <li>RESTful APIs</li>
+          <li>Docker</li>
+          <li>PHP</li>
+          <li>oAuth 2.0</li>
+          <li>Animations</li>
+          <li>Single Page Apps</li>
+          <li>UX Design</li>
+          <li>Gatsby.js</li>
+          <li>Adobe AEM</li>
+          <li>2D Canvas</li>
+          <li>Accessibility</li>
+          <li>WordPress
+          <li>Serverless</li>
+          <li>Microservices</li>
+          <li>OWASP</li>
+        </ul>
       </div>
+      <p>
+        Specialising in smart-and-scalable web applications, I've worked with
+        many great Australian brands, including some you may have heard of.
+      </p>
+      <p>
+        <a href="/cv.pdf">Download my CV Here [PDF]</a>
+      </p>
     </main>
   </body>
 </html>

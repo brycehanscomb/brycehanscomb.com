@@ -1,32 +1,95 @@
 @import "common.css";
 @import "_inner-page-common.css";
 
-.portfolio-item {
+:not(.no-js) [data-hidden-until-initialized] {
+    display: none;
+}
+
+.no-js #skills-marquee {
+    list-style: initial;
+    margin: initial;
+    padding: initial;
+}
+
+#skills-marquee-container {
+    background: var(--code-background-color);
+}
+
+@media screen and (min-width: 980px) {
+    #skills-marquee-container {
+        margin-left: calc((100vw - 980px) / 2 * -1);
+        margin-right: calc((100vw - 980px) / 2 * -1);
+    }
+}
+
+#skills-marquee {
+    list-style: none;
+    padding: 20px;
+    text-justify: inter-word;
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+    max-width: 980px;
+    margin: 40px auto;
+
     display: grid;
-    grid-template-areas:
-        "thumbnail title"
-        "thumbnail position"
-        "thumbnail description"
-    ;
-
-    grid-template-columns: 50% 1fr;
-    grid-template-rows: auto auto auto;
-    grid-column-gap: 1em;
+    grid-gap: 10px;
 }
 
-.portfolio-item__screenshot {
-    grid-area: thumbnail;
-    width: 100%;
+@media screen and (min-width: 640px) {
+    #skills-marquee {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.portfolio-item__title {
-    grid-area: title;
+@media screen and (min-width: 980px) {
+    #skills-marquee {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.portfolio-item__description {
-    grid-area: description;
+#skills-marquee li {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    height: 2.25em;
+    align-items: center;
 }
 
-.portfolio-item__position {
-    grid-area: position;
+@media screen and (min-width: 640px) {
+    /*#skills-marquee li:nth-child(2n-1) {*/
+    /*    text-align: center;*/
+    /*    justify-content: center;*/
+    /*}*/
+
+    #skills-marquee li:nth-child(2n) {
+        text-align: right;
+        justify-content: flex-end;
+    }
 }
+
+
+@media screen and (min-width: 980px) {
+    #skills-marquee li:nth-child(3n-1) {
+        text-align: center;
+        justify-content: center;
+    }
+
+    #skills-marquee li:nth-child(3n) {
+        text-align: right;
+        justify-content: flex-end;
+    }
+}
+
+
+#skills-marquee li:nth-child(n+13) {
+    display: none;
+}
+
+main.content-container {
+    text-align: center;
+}
+
+/*#skills-marquee li:not(:last-of-type)::after {*/
+/*    content: '·';*/
+/*    margin-left: 1.5rem;*/
+/*}*/
