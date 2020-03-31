@@ -69,6 +69,11 @@
 
 
 @media screen and (min-width: 980px) {
+    #skills-marquee li:nth-child(2n) {
+        text-align: initial;
+        justify-content: initial;
+    }
+
     #skills-marquee li:nth-child(3n-1) {
         text-align: center;
         justify-content: center;
