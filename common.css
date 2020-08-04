@@ -28,7 +28,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-size: 20px;
-  font-family: Georgia,Times,Times New Roman,serif;
+  font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;;
   color: var(--content-color);
   background: var(--content-background-color);
 }
