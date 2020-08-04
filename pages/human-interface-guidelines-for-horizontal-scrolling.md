@@ -20,14 +20,10 @@ to use your design as any other conventional webpage.
 
 ### Arrow Keys
 
-When you press the <kbd>⬆</kbd> or <kbd>⬇</kbd> arrow keys, the browser changes 
-the document's position in the viewport by one _Line_. When you press 
-<kbd>Page Up</kbd> or <kbd>Page Down</kbd>, the document's position changes by 
-one _Page_.
+Pressing the <kbd>⬆</kbd> or <kbd>⬇</kbd> arrow keys changes the document's 
+position by one `Line`. 
 
-The sizes of Lines and Pages differ between browsers. Pages are usually about
-`90vh` high [but can be user-configured](https://ask.metafilter.com/315755/How-to-adjust-scroll-distance-in-browsers#4559053),
- and Lines are usually viewport-independent:
+The size of a Line differs between browsers and is usually viewport-independent:
 
 | User Agent | Operating System | Line Size |
 |------------|------------------|-----------|
@@ -43,7 +39,7 @@ Since users will naturally press <kbd>⬆</kbd> and <kbd>⬇</kbd> to navigate
 around a document, make sure you map <kbd>⬇</kbd> to scroll one Line towards 
 the end of the document and <kbd>⬆</kbd> one Line towards the start.
 
-A naive implementation could look like this:
+A basic implementation could look like this:
 
 ```javascript
 window.addEventListener('keydown', (event) => {
@@ -62,19 +58,24 @@ window.addEventListener('keydown', (event) => {
 
 If you want scroll-distance-parity across the _x-_ and _y-axes_, should try to 
 match the Line/Page size when you implement `scrollLeft()` and `scrollRight()`. 
-Otherwise, it's probably perfectly fine to set a scroll value that fits the 
-size and context of your document.
+Otherwise, it's fine to set a scroll value that fits the size and context of 
+your document.
 
 ### Other Keys
 
+Pressing <kbd>Page Up</kbd> or <kbd>Page Down</kbd> changes the document's 
+position by one `Page` -- usually about `90vh` high [but it can be user-configured](https://ask.metafilter.com/315755/How-to-adjust-scroll-distance-in-browsers#4559053).
+
 In most browsers, <kbd>Space</kbd> duplicates the <kbd>Page Down</kbd>
 functionality, and <kbd>Shift + Space</kbd> is equal to <kbd>Page
-Up</kbd>. Whatever you're doing when you listen for `event.key ===
-'PageDown'`, ensure you also do for `'Space'`.
+Up</kbd>. Make sure you handle them in the same way.
 
-Additionally, the <kbd>Home</kbd> and <kbd>End</kbd> should scroll the
-document to the start and end respectively. The code to do that might
-look like this:
+Additionally:
+
+* <kbd>Home</kbd> should scroll to the start of the document
+* <kbd>End</kbd> should scroll to the end
+
+The code to do that might look like this:
 
 ```javascript
 window.addEventListener('keydown', (event) => {
@@ -96,13 +97,13 @@ window.addEventListener('keydown', (event) => {
 });
 ```
 
-Note that using `document.documentElement.scrollTop` for the `y`
+<small>**Note:** using `document.documentElement.scrollTop` for the `y`
 parameter will keep any intentional y-axis scrolling intact; we only
-want to change the x-axis position of the document.
+want to change the x-axis position of the document.</small>
 
 Finally, don't forget that the user should be able to tab through the
 document's focusable elements with the <kbd>Tab</kbd> key. Ensure your
-UI brings the focused element wholly into the viewport when tabbed to.
+UI [brings the focused element wholly into the viewport](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView).
 
 ## Fragment Links
 
@@ -128,7 +129,7 @@ need to use something like
 to calculate the edges of the element compared to the viewport and apply
 and offset in scroll-jump logic yourself.
 
-For bonus points, use the
+**Bonus Points:** use the
 [`:target` pseudo-selector](https://css-tricks.com/on-target/) to apply
 some specific UX callout that alerts the user to which element was
 hotlinked.
@@ -207,12 +208,24 @@ their scroll position actually changes in terms of how far they have
 moved through the document. 
 </blockquote>
 
-todo: determine if:
-1. scroll anchoring works natively on horizontal documents
-2. scroll anchoring works natively in nested horizontal elements
-3. scroll anchoring works on manually `transform`-ed elements
-4. scroll anchoring works on resize
-5. scroll anchoring works on device rotations
+You may need to manually implement this behaviour on your site for:
+
+1. Nested horizontal elements
+2. Manually `transform`-ed elements
+3. Window resize events
+5. Device rotations
+
+## Sticky Elements
+
+If you're using CSS `position: stickt` to create persistent elements on the left
+and right edges of the screen, be mindful of mobile devices. 
+
+They are usually used in portrait orientation and likely don't have much room to
+spare for UI elements that obscure the content below.
+
+Additionally, if you're using URL fragments to link to specific elements on the
+page, ensure that your browser will scroll far enough the sticky element doesn't 
+obscure the leading edge of the target content.
 
 -----
 -----
@@ -220,12 +233,9 @@ todo: determine if:
 #### TODO: 
 
 * Smooth scrolling
-* Zoomin / zoomout
-* css position sticky implications
 * long paragraphs still overflow vertically (watch your screen height)
 * persist scroll position when returning via back-button ("history
   scroll restoration")
-* maintain scroll position on window resize
 * information hierarchy (H1's at the top...or the left?)
 * what about the footer?
 * how does the content re-flow when AdBlockers remove content?
