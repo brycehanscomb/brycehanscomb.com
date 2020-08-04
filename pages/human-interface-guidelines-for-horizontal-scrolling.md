@@ -2,8 +2,6 @@
 
 ## Things to consider when building web UIs that go sideways.
 
-## ⚠️ WARNING! ⚠️ This article is still being written and isn't finished yet haha
-
 The modern web allows for some truly amazing interaction design. Some of
 it is so good, we honour the excellence of the best designers and
 developers with [actual awards](https://www.webbyawards.com/).
@@ -250,17 +248,15 @@ Strike the right balance between putting the footer where the user normally
 expects it -- at the bottom -- versus maximising the available vertical space
 for your horizontally-scrolling main content.
 
------
------
 
-#### TODO: 
+## Other Thoughts: 
 
 * long paragraphs still overflow vertically (watch your screen height)
 * persist scroll position when returning via back-button ("history
   scroll restoration")
 * information hierarchy (H1's at the top...or the left?)
 * how does the content re-flow when AdBlockers remove content?
-* Printing
+* Printing (portrait vs landscape page layout)
 * selecting text in a multi-column layout
 * Firefox Caret Browsing
 * non left-to-right text layouts
