@@ -217,7 +217,7 @@ You may need to manually implement this behaviour on your site for:
 
 ## Sticky Elements
 
-If you're using CSS `position: stickt` to create persistent elements on the left
+If you're using CSS `position: sticky` to create persistent elements on the left
 and right edges of the screen, be mindful of mobile devices. 
 
 They are usually used in portrait orientation and likely don't have much room to
@@ -227,17 +227,38 @@ Additionally, if you're using URL fragments to link to specific elements on the
 page, ensure that your browser will scroll far enough the sticky element doesn't 
 obscure the leading edge of the target content.
 
+## Smooth Scrolling
+
+Implementing interactivity like scrolling from one part of the document to 
+another is common. Natively you can do it:
+
+* with CSS, using `scroll-behaviour: smooth`
+* with Javascript, using `window.scrollBy(x, y, { behavior: 'smooth' })`
+
+Both these methods will seamlessly smooth-scroll horizontally just as well as
+they do vertically. However if you're using a custom JS Smooth Scrolling script
+such as a jQuery plugin, ensure that it handles x-axis smooth scrolling too.
+
+## Footers
+
+Footers are a common UX pattern on vertically-scrolled websites. Consider if you
+need a footer at the end of your document. Will it be at the far-right of your
+content, following the flow of the rest of the page? Or will it be at the bottom
+of the screen like a traditional footer?
+
+Strike the right balance between putting the footer where the user normally
+expects it -- at the bottom -- versus maximising the available vertical space
+for your horizontally-scrolling main content.
+
 -----
 -----
 
 #### TODO: 
 
-* Smooth scrolling
 * long paragraphs still overflow vertically (watch your screen height)
 * persist scroll position when returning via back-button ("history
   scroll restoration")
 * information hierarchy (H1's at the top...or the left?)
-* what about the footer?
 * how does the content re-flow when AdBlockers remove content?
 * Printing
 * selecting text in a multi-column layout
