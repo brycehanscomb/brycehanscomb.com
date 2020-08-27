@@ -1,0 +1,105 @@
+@import "common.css";
+
+.title {
+  text-transform: uppercase;
+  line-height: 0.8em;
+  font-weight: 900;
+}
+
+body {
+  /*border: 20px solid var(--secondary-color);*/
+  padding: 20px;
+  background: #f9f9f9;
+  /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;;*/
+}
+
+section {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #cdcdcd;
+  padding: 2rem;
+  background: white;
+  max-width: 900px;
+  border-top: 2px solid var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.heading {
+  font-weight: normal;
+  margin: 0 0 3rem;
+}
+
+.position {
+  letter-spacing: -0.7px;
+  font-weight: bold;
+  margin: -0.4ex 0 0.6rem;
+  grid-area: position;
+}
+
+.timeframe {
+  color: #444;
+  margin: 0;
+  grid-area: timeframe;
+}
+
+.timeframe::before {
+  content: '·';
+  display: inline-block;
+  margin-right: 1rem;
+  margin-left: -1rem;
+}
+
+.company {
+  margin: 0;
+  grid-area: company;
+}
+
+.logo {
+  height: 100px;
+  grid-area: logo;
+}
+
+.summary {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #e9e9e9;
+  font-size: 0.95em;
+  color: #444;
+  /*margin-right: -2rem;*/
+  /*padding-right: 2rem;*/
+  grid-area: summary;
+}
+
+.summary :last-child {
+  margin-bottom: 0;
+}
+
+.item {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-areas:
+    "logo position position position"
+    "logo company timeframe ."
+    "logo summary summary summary"
+  ;
+  justify-content: start;
+  align-items: start;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 0 2rem;
+}
+
+.item.compact {
+  grid-template-areas:
+    "logo . . ."
+    "logo position position position"
+    "logo company timeframe ."
+    "logo . . ."
+;
+}
+
+.item:not(:first-of-type) {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #cdcdcd;
+}

@@ -1,51 +1,49 @@
-# The Changing Role Of Consultants In An Agile Workforce
+The changing role of consultants in an Agile workforce
 
-## Why Agile forces us to provide more value to clients than in traditional Waterfall projects.
+As more enterprises undergo an Agile Transformation, consultants must become more involved with their client’s business needs.
 
-With the adoption of Agile practices in enterprise, consultants must be increasingly
-involved with their clients' business needs.
+It’s rarer now to receive a completed specifications document and instructions to report back later with a finished product. Instead, units of work are becoming smaller, more well-defined, and subject to changes of direction.
 
-It’s becoming rarer for a consultant to be given a completed specifications
-document and expected to "check in" at a later time to deliver a finished product.
-Instead, units of work are becoming smaller and subject to changes of direction.
+If you're a consultant in an Agile software project, you need to know how your positions and responsibilities have changed. Keep these three things in mind to make the most of what you have to offer.
 
-To effectively contribute to a software project that isn't completely defined at
-the point of commencement, consultants must be aware of how their positions
-and responsibilities have changed.
+You'll Need An Increased Understanding of Product
 
-## You'll Need An Increased Understanding Of Product
+In the traditional outsourcing model, clients treat consultancy workers as ‘black-boxes’ of productivity — requirements go in, completed work comes out.
 
-In the traditional outsourcing model, a client would treat consultancy workers as
-‘black-boxes’ of productivity — requirements go in, completed work comes out.
+You could get by with only limited understanding of the intention behind the product’s commissioning and need not ask deeper questions. There was enough information to get the task done, and that was all that’s needed.
 
-Consultants would have some understanding of the intention behind the product’s
-commissioning, but could ultimately get by without asking deeper questions.
+Now, thanks to Agile, you'll see a much smaller picture of the entire product. Products are built iteratively, with the work completed in each sprint influencing the work of the next. 
 
-Now as Agile calls for more tightly-scoped requirements, consultants are given
-a much smaller picture of the entire product at each stage of development. The
-true scope of the work is not known until the completion of the project because
-— by design — it’s being defined on-the-fly.
+The true form of the work is not known until the completion of the project because — by design — it’s being defined on-the-fly.
 
-As a result, consultants cannot rely on their clients having all the answers all
-the time, and need to increase their understanding of the product as a whole.
-Instead of being instructed what to make and when, consultants must develop
-their own intuitive understanding of the project’s direction, size and priorities.
+As a result, consultants cannot rely on their clients having all the answers all the time. You must develop you own understanding of the project’s direction, size and priorities.
 
-## Increased Your Alignment with Client Productivity Structure
+You Must Increase Alignment with Client Productivity Structure
 
-The hallmark of offshore-contractor horror stories is the disappointing discovery
-after a product is seemingly delivered on time, and to budget. Upon closer
-inspection, the delivered product is so poorly constructed, that the subsequent
-cost to maintain or extend it, far exceeds the initial savings from outsourcing
-in the first place.
+The hallmark of offshore-contractor horror stories is always the same. The project is seemingly delivered on time, and within budget. Everybody's happy. Later, it's discovered the product is so poorly constructed that the cost to maintain or extend it far exceeds any initial savings.
 
-This is a symptom of vendors who are happy to be instructed on what needs to be
-built, but are left alone to develop the associated execution strategy and
-implementation plan. This can lead to a situation where, not only is the
-initial product build outsourced, but decisions about the cost of support,
-maintenance and future development, have also ceded to the vendor.
+This is a symptom of vendors who are happy to take instruction on what needs to be built, but get left alone to build it. This can lead to a situation where not only is the initial product build outsourced, but decisions about the cost of support, maintenance and future development, have also ceded to the vendor.
 
-Businesses have endured the risk associated with outsourced workers traditionally
-having autonomy around the implementation strategy for a product. As a result,
-many enterprises are moving to Agile, to reclaim their authority of ‘the how’ as
-well as ‘the what’.
+Businesses have endured the risk associated with outsourced workers traditionally having autonomy around the implementation strategy for a product. As a result, many enterprises are moving to Agile, to reclaim their authority of ‘the how’ as well as ‘the what’.
+
+A project executed using the Agile methodology will have its units of work defined by the business. With this model, you must accept that you no longer have the same autonomy to implement as you normally would — your productivity structure is now increasingly directed by the client.
+
+Previously, some tasks could be de-prioritised or re-organised in a way that is opaque to the client. Now you must adjust your workflow to match more granular delivery expectations, and follow the client’s direction in parallel.
+
+Though there is a greater burden on the client to direct the productivity structure, there are upsides. They receive greater visibility on progress and impediments, and you benefit from reduced reporting.
+
+There's Opportunity In Collaboration
+
+For many businesses, the cost-benefit equation for outsourcing leads to a culture where very few projects actually can be outsourced. In a traditional enterprise mindset, the cost of losing the product knowledge as a result of staff changes — and the direct impact this has on delivery — can neuter the benefits of outsourcing, and restricts development efforts to the more stable, internal workforce. 
+
+So, the use of contractors, consultants and external vendors can be seen as a risk for the client. Even if the project benefits from your outside help, the intimate understanding you've built of the product’s can disappear at the end of your contract.
+
+Fortunately, businesses employing product development via Agile methodologies can reduce this risk. With the smaller scope and the greater granularity of units-of-work, development can scale horizontally. External help can be commissioned to tackle smaller, more discrete tasks. That means more working opportunities for consultants like you.
+
+So long as the costs favour ‘throwing people at the problem’, consultants should seize opportunities to jump into teams as required, offering value where they were unable to before. The outcome is an increase in viable outsourcing activity, and more work for the suitable and flexible vendor.
+
+Conclusion
+
+As businesses migrate more of their development operations to Agile, consultants and outsourced workers face pressure to adapt to these new working methods. 
+
+Consultants must make the extra effort to ‘get closer’ to clients to understand the direction and requirements of a project.
