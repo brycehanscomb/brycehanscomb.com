@@ -13,7 +13,6 @@ body {
   /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;;*/
 }
 
-
 section {
   width: 100%;
   margin: 0 auto;
@@ -43,11 +42,13 @@ section {
   grid-area: timeframe;
 }
 
-.timeframe::before {
-  content: '·';
-  display: inline-block;
-  margin-right: 1rem;
-  margin-left: -1rem;
+@media only screen and (min-width: 501px) {
+  .timeframe::before {
+    content: '·';
+    display: inline-block;
+    margin-right: 1rem;
+    margin-left: -1rem;
+  }
 }
 
 .company {
@@ -58,6 +59,12 @@ section {
 .logo {
   height: 100px;
   grid-area: logo;
+}
+
+@media only screen and (max-width: 500px) {
+  .logo {
+    margin-bottom: 1rem;
+  }
 }
 
 .summary {
@@ -86,6 +93,19 @@ section {
   margin-left: -2rem;
   margin-right: -2rem;
   padding: 0 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .item {
+    grid-template-areas:
+      "logo logo ."
+      "position position position"
+      "company company company"
+      "timeframe timeframe timeframe"
+      "summary summary summary"
+    ;
+    grid-template-columns: 40% 1fr 40%;
+  }
 }
 
 .item.compact {
