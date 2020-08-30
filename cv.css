@@ -1,16 +1,17 @@
 @import "common.css";
 
-.title {
-  text-transform: uppercase;
-  line-height: 0.8em;
-  font-weight: 900;
-}
 
 body {
   /*border: 20px solid var(--secondary-color);*/
-  padding: 20px;
+  /*padding: 0 20px;*/
   background: var(--secondary-color);
   /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;;*/
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 section {
@@ -24,9 +25,13 @@ section {
   margin-bottom: 2rem;
 }
 
+.intro {
+  text-align: center;
+}
+
 .heading {
   font-weight: normal;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 }
 
 .position {
@@ -121,4 +126,45 @@ section {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: 1px solid #cdcdcd;
+}
+
+.title {
+  text-transform: uppercase;
+  line-height: 0.8em;
+  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  color: var(--content-color);
+  opacity: 0.8;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5rem;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .title {
+    font-size: 3rem;
+    padding: 2rem;
+  }
+}
+
+.title::before {
+  content: "This page tells you everything there is to know about";
+  font-weight: normal;
+  font-size: 1rem;
+  text-transform: none;
+  margin-top: -1rem;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+.title::after {
+  display: block;
+  content: '';
+  height: 0.5rem;
+  background: var(--primary-color);
+  width: 100%;
+  margin-top: 0.5rem;
 }
