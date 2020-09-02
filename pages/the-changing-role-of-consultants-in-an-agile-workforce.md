@@ -1,5 +1,7 @@
 The changing role of consultants in an Agile workforce
 
+## Warning: this article's formatting has not been fixed yet. Maybe come back in a few months when I get around to it ¯\\_(ツ)_/¯
+
 As more enterprises undergo an Agile Transformation, consultants must become more involved with their client’s business needs.
 
 It’s rarer now to receive a completed specifications document and instructions to report back later with a finished product. Instead, units of work are becoming smaller, more well-defined, and subject to changes of direction.
