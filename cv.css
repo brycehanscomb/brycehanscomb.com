@@ -2,13 +2,11 @@
 
 
 body {
-  /*border: 20px solid var(--secondary-color);*/
-  /*padding: 0 20px;*/
   background: var(--secondary-color);
-  /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;;*/
 }
 
-main {
+main,
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,4 +194,19 @@ section {
   background: var(--primary-color);
   width: 100%;
   margin-top: 0.5rem;
+}
+
+nav {
+  padding: 1rem;
+}
+
+.home-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+.home-link::before {
+  content: "← ";
 }
