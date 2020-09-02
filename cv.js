@@ -32,8 +32,7 @@ const randomizeNodeOrder = () => {
     skillsMarquee.insertBefore(firstHiddenItem, replacementTarget);
     skillsMarquee.insertAdjacentElement('beforeend', replacementTarget);
 
-
-    firstHiddenItem.animate([ { opacity: 0 }, { opacity: 1 }], { duration: 500 })
+    firstHiddenItem.animate([ { opacity: 0, color: 'var(--primary-color)' }, { opacity: 1 }], { duration: 500 })
 }
 
 setInterval(randomizeNodeOrder, 1000);
