@@ -66,7 +66,7 @@ section {
   grid-area: logo;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 640px) {
   .logo {
     margin-bottom: 1rem;
   }
@@ -100,16 +100,26 @@ section {
   padding: 0 2rem;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 640px) {
   .item {
     grid-template-areas:
-      "logo logo ."
+      "logo logo logo"
       "position position position"
       "company company company"
       "timeframe timeframe timeframe"
       "summary summary summary"
     ;
     grid-template-columns: 40% 1fr 40%;
+  }
+
+  .logo {
+    justify-self: center;
+  }
+
+  .company,
+  .position,
+  .timeframe {
+    text-align: center
   }
 }
 
@@ -120,6 +130,25 @@ section {
     "logo company timeframe ."
     "logo . . ."
 ;
+}
+
+@media only screen and (max-width: 640px) {
+  .item.compact {
+    text-align: center;
+    justify-content: center;
+    grid-template-areas:
+      "logo"
+      "position"
+      "company"
+      "timeframe"
+    ;
+
+    grid-template-columns: 1fr;
+  }
+
+  .item.compact .logo {
+    justify-self: center;
+  }
 }
 
 .item:not(:first-of-type) {
@@ -143,7 +172,7 @@ section {
   font-size: 4rem;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 640px) {
   .title {
     font-size: 3rem;
     padding: 2rem;
