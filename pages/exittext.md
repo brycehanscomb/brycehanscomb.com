@@ -55,3 +55,5 @@ installation on GitHub](http://brycehanscomb.github.io/exittext).
 ExitText's featureset has also been incorporated into
 [Wirify](https://www.wirify.com/2017/09/redact-and-greeking-features-available-in-wirify/)
 -- go check it out!
+
+The technology in ExitText also led to the creation of [ClearCopy](https://github.com/stak-digital/clearcopy).

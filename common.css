@@ -47,3 +47,31 @@ main a {
 main a:hover {
   text-decoration: underline;
 }
+
+
+.page-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+.page-link:hover {
+  text-decoration: none;
+}
+
+.page-link::after {
+  content: "→";
+  /**
+     * Use a nicer arrow from a different typeface
+     */
+  font-family: cursive;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  transition: left 0.1s ease-out;
+}
+
+.page-link:hover::after {
+  left: 7px;
+}
