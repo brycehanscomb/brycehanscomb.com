@@ -251,16 +251,14 @@ for your horizontally-scrolling main content.
 
 ## Other Thoughts: 
 
-* long paragraphs still overflow vertically (watch your screen height)
-* persist scroll position when returning via back-button ("history
-  scroll restoration")
-* information hierarchy (H1's at the top...or the left?)
-* how does the content re-flow when AdBlockers remove content?
-* Printing (portrait vs landscape page layout)
-* selecting text in a multi-column layout
-* Firefox Caret Browsing
-* non left-to-right text layouts
-* more-content hints (to avoid False Bottoms)
-* don't hide the scrollbars!
-* allowing users to vertically scroll tall content (un-overriding the
-  scroll events)
+1. Long paragraphs still overflow vertically, so watch your screen height
+2. Ensure you [persist the user's scroll position](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration) when returning via back-button
+3. Consider your information hierarchy: do your H1's go at the top...or the left?
+4. Test how the content re-flows when ad-blockers remove content
+5. Check your print stylesheets: what happens if people try to print Portrait?
+6. Selecting text in a multi-column layout
+7. Consider the UX of [Caret Browsing](https://www.guidingtech.com/caret-browsing-chrome-firefox-edge-how-to-use/)
+8. Consider non-LTR readers (and auto-translation tools that switch between them)
+9. Avoid [False Bottoms](https://www.nngroup.com/articles/illusion-of-completeness/) in both axes
+10. Don't hide the scrollbars!
+11. Ensure you allow users to still vertically scroll content that's too tall for their screens
