@@ -3,9 +3,9 @@
 ## An architecture for Event-Based tracking in large web applications
 
 With the advent of the Component-Tree Model, developers have enjoyed building web
-UIs from the composition of smaller, independent, pure functions. This leads to
-challenges when trying to implement system-orthogonal functionality like 
-authentication, logging, analytics.
+UIs from the composition of smaller, independent, functional components. 
+Disadvantages to this approach include the challenges faced when implementing 
+system-orthogonal functionality like authentication, logging, or analytics.
 
 This article demonstrates an architecture that enables building analytics systems
 which are compatible with the React Component philosophy.
@@ -26,10 +26,9 @@ There are a few issues with this system:
 5. It's impossible to determine who / why / when a property was set
 6. You'll encounter friction when moving to [server-side tagging](https://developers.google.com/tag-manager/serverside)
 
-Fortunately, all of these issues can be solved by changing how analytics event 
-data is surfaced by the application. Instead of application user interactions
-adding data to a global object, these interaction events can be modelled along
-a timeline-of-events.
+Fortunately, all these issues can be resolved by changing how tracked data is 
+surfaced by the application. Instead of user interactions adding data to a 
+global object, they can be modelled as a timeline of events.
 
 ## Key Idea 2: The Two Axes of Event Data
 
@@ -61,7 +60,7 @@ parts of the application can add their own contextual data such as:
 * The current page's URL, title and other metadata (e.g. via the root `<App>`)
 * The items in the user's shopping cart (e.g. via a `<CartContext>`)
 
-Each one of these components can adhere to the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+Each one of these components can adhere to the [single responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
 but in aggregate perform system-orthogonal functionality.
 
 ## Benefits
