@@ -248,6 +248,16 @@ Strike the right balance between putting the footer where the user normally
 expects it -- at the bottom -- versus maximising the available vertical space
 for your horizontally-scrolling main content.
 
+## The `<hr>` Element
+
+Horizontal Rules have a specific semantic meaning in HTML, but if your text
+gets broken up along the vertical axis, you can use an ARIA role to convert it:
+
+```html
+<hr aria-orientation="vertical">
+```
+
+This will [ensure the correct semantic meaning is conveyed in assistive tech](https://www.sarasoueidan.com/blog/horizontal-rules/#:~:text=VoiceOver%20on%20macOS%20announces%20horizontal%20rules%20with%20a%20vertical%20orientation%20as%20%E2%80%9CVertical%20Splitter%E2%80%9D).
 
 ## Other Thoughts: 
 

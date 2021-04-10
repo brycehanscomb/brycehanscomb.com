@@ -32,7 +32,8 @@ global object, they can be modelled as a timeline of events.
 
 ## Key Idea 2: The Two Axes of Event Data
 
-
+If you consider the data along an event stream to be aligned on an "x-axis", then
+the payload embedded in each event can be imagined as the "y-axis". 
 
 ## Key Idea 3: Adding Context via Event Bubbling
 
