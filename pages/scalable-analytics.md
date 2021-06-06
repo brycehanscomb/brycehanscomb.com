@@ -35,6 +35,49 @@ global object, they can be modelled as a timeline of events.
 If you consider the data along an event stream to be aligned on an "x-axis", then
 the payload embedded in each event can be imagined as the "y-axis". 
 
+Plucking data points from along the x-axis relates to data gathered "across" the
+session, plucking from the y-axis relates to the data gathered from a single 
+event.
+
+### X-Axis Data Analysis
+
+Insights gained from x-axis analysis tend to be session-based like:
+
+[ Load reset password screen ] --> [ Input password ] --> [ password validation failed ] 
+    --> [ input password ] --> [ password validation failed ] --> [ input passwor] 
+    --> [ password validation failed ] --> [ input password ] --> [ password validation
+    ok ] -> [ submit ]
+
+One might gather from events like this that a user struggled to come up with a
+password that met your application's validation requirements. This could lead to
+an insight like "Our password rules are too tough" and implies its worth looking
+into password requirements that users don't struggle with.
+
+### Y-Axis Data Analysis
+
+Data insights on the y-axis tend to appear more in-the-moment than the 
+"across-time" nature of x-axis data. For example, a Product Selection Event 
+could include the following information:
+
+```
+{
+  action: "product selection",
+  target: "#buy_now_button__starter",
+  visible_products: [ "starter", "standard", "premium" ]
+  chosen_product: "starter",
+  button_text: "Buy a Starter Plan now"
+}
+```
+
+Of this contrived example, a Data Analyst could infer that the user clicked the
+first (or left-most) product on the screen. Given what we know about peoples'
+biases to [simply pick the first option presented](https://www.dailycal.org/2012/07/11/new-study-reveals-first-is-best/)
+this could lead to actionable insights about product ordering and placement.
+
+#### Stacked-Y-Axis Data Analysis
+
+((analysing data across sessions, eg average page load speed from various Page Load events))
+
 ## Key Idea 3: Adding Context via Event Bubbling
 
 DOM events have a useful feature called [bubbling](https://en.wikipedia.org/wiki/Event_bubbling),
